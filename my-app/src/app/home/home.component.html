@@ -1,0 +1,35 @@
+
+
+
+
+<div class="text-center " *ngFor="let item of items" (click)="addItem(item)"  >
+    <img width="100" height="100" [src]="item.src" />
+  <p>
+    {{item.name}}
+  </p>
+  <p>
+    {{item.price}}
+  </p>
+  <p  class="btn btn-success">BUY</p>
+</div>
+
+<h1>SHOPPING CART</h1>
+
+<div class="list-group" >
+    <div lass="list-group-item" *ngFor="let total of totals">
+        <span>{{total.name}} |</span>
+        <span>{{total.num}} |</span>
+        <span>{{total.total}}</span>
+        <p class="btn btn-danger" (click)=removeItem(total)>remove</p>
+
+    </div>
+</div>
+
+<p>Name: <input type="text"></p>
+<p>Address: <input type="text"></p>
+<p>card number: <input type="text"></p>
+
+<p>Total : {{total}}</p>
+
+<a class="btn btn-primary" routerLink="/about" routerLinkActive="active">Submit</a>
+
